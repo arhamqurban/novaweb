@@ -3,7 +3,7 @@ import { generatePageMetadata } from "@/lib/seo";
 import { PortfolioSection } from "@/sections/portfolio-section";
 import { TestimonialsSection } from "@/sections/testimonials-section";
 import { FinalCTASection } from "@/sections/final-cta-section";
-import { getSiteConfig, getPortfolio, getTestimonials } from "@/lib/content";
+import { getSiteConfig, getTestimonials } from "@/lib/content";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Portfolio",
@@ -21,7 +21,6 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function PortfolioPage() {
   const siteConfig = getSiteConfig();
-  const portfolioData = getPortfolio();
   const testimonialsData = getTestimonials();
 
   return (
@@ -34,12 +33,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <PortfolioSection
-        label={portfolioData.section.label}
-        heading={portfolioData.section.heading}
-        subtitle={portfolioData.section.subtitle}
-        projects={portfolioData.projects}
-      />
+      <PortfolioSection />
       <TestimonialsSection
         label={testimonialsData.section.label}
         heading={testimonialsData.section.heading}

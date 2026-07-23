@@ -14,7 +14,6 @@ import { FinalCTASection } from "@/sections/final-cta-section";
 import {
   getSiteConfig,
   getServices,
-  getPortfolio,
   getWhyChooseUs,
   getProcess,
   getTechnologies,
@@ -26,7 +25,6 @@ import {
 export default function HomePage() {
   const siteConfig = getSiteConfig();
   const servicesData = getServices();
-  const portfolioData = getPortfolio();
   const whyChooseUsData = getWhyChooseUs();
   const processData = getProcess();
   const technologiesData = getTechnologies();
@@ -55,12 +53,7 @@ export default function HomePage() {
         subtitle={whyChooseUsData.section.subtitle}
         reasons={whyChooseUsData.reasons}
       />
-      <PortfolioSection
-        label={portfolioData.section.label}
-        heading={portfolioData.section.heading}
-        subtitle={portfolioData.section.subtitle}
-        projects={portfolioData.projects}
-      />
+      <PortfolioSection />
       <ProcessSection
         label={processData.section.label}
         heading={processData.section.heading}
