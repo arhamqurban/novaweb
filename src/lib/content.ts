@@ -53,10 +53,6 @@ export interface SiteConfig {
       children?: Array<{ label: string; href: string }>;
     }>;
   };
-  announcementBar: {
-    enabled: boolean;
-    messages: Array<{ text: string; cta: string; href: string }>;
-  };
   hero: {
     label: string;
     headline: string;

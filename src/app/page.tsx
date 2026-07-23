@@ -1,4 +1,3 @@
-import { AnnouncementBar } from "@/components/ui/announcement-bar";
 import { HeroSection } from "@/sections/hero-section";
 import { TrustBar } from "@/sections/trust-bar";
 import { StatsSection } from "@/sections/stats-section";
@@ -34,10 +33,6 @@ export default function HomePage() {
 
   return (
     <>
-      <AnnouncementBar
-        enabled={siteConfig.announcementBar.enabled}
-        messages={siteConfig.announcementBar.messages}
-      />
       <HeroSection hero={siteConfig.hero} />
       <TrustBar heading={siteConfig.trustBar.heading} logos={siteConfig.trustBar.logos} />
       <StatsSection stats={siteConfig.stats} />

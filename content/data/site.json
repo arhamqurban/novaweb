@@ -32,14 +32,6 @@
       { "label": "Contact", "href": "/contact" }
     ]
   },
-  "announcementBar": {
-    "enabled": true,
-    "messages": [
-      { "text": "Limited slots available for Q2 2026", "cta": "Book Now →", "href": "/booking" },
-      { "text": "New: E-Commerce Starter Package", "cta": "Learn More →", "href": "/services#ecommerce" },
-      { "text": "Trusted by 50+ businesses across Pakistan", "cta": "See Our Work →", "href": "/portfolio" }
-    ]
-  },
   "hero": {
     "label": "Premium Web Design Agency",
     "headline": "We Build Digital Experiences That Drive Results",
