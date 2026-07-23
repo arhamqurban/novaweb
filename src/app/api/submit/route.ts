@@ -75,6 +75,7 @@ async function trySendEmail(data: Record<string, unknown>) {
         accessToken: privateKey,
         template_params: {
           name: data.name || "Website Visitor",
+          to_email: data.email || "",
           user_email: process.env.NEXT_PUBLIC_EMAIL || "novawebs09@gmail.com",
           email: data.email || "",
           phone: data.phone || "",
