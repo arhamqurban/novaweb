@@ -55,19 +55,7 @@ const DEMO_PROJECTS: PortfolioProject[] = [
     metrics: "3× efficiency",
     createdAt: "2026-05-01T00:00:00Z", updatedAt: "2026-05-25T00:00:00Z",
   },
-  {
-    id: generateId(), title: "Shopify", category: "E-Commerce",
-    description: "Modern online store platform with premium shopping experience and secure checkout.",
-    longDescription: "A comprehensive e-commerce solution with product catalog, secure checkout, inventory management, and admin dashboard.",
-    technologies: ["Next.js", "Stripe", "Sanity", "Redis"],
-    clientName: "", completionDate: "2026-05-10",
-    featured: true, order: 5, status: "published",
-    thumbnail: "/images/projects/shopify.svg",
-    screenshots: [], liveUrl: "https://www.shopify.com", githubUrl: "",
-    caseStudy: "A high-converting e-commerce platform with rich product pages and optimized checkout.",
-    metrics: "+150% revenue",
-    createdAt: "2026-04-15T00:00:00Z", updatedAt: "2026-05-10T00:00:00Z",
-  },
+
   {
     id: generateId(), title: "Framer Portfolio", category: "Portfolio",
     description: "Premium portfolio templates with modern UI/UX and stunning animations.",
