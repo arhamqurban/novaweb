@@ -129,6 +129,9 @@ export const SERVICES: Service[] = [
 ];
 
 // ─── Portfolio ───────────────────────────────────────────────
+// All projects are UI/UX design showcase concepts.
+// As Nova Webs completes real client work, update this list.
+
 export const PORTFOLIO: PortfolioItem[] = [
   {
     id: "iron-gym",
@@ -141,7 +144,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Stripe", "Supabase", "Framer Motion"],
     metrics: "+85% membership signups",
     href: "/portfolio/iron-gym",
-    liveUrl: "https://ironforge-gym.vercel.app",
+    isConcept: true,
     aspectRatio: "square",
   },
   {
@@ -149,13 +152,13 @@ export const PORTFOLIO: PortfolioItem[] = [
     title: "LuxeDine",
     category: "Restaurant",
     filterCategory: "Landing Page",
-    description: "Award-winning restaurant site with immersive menu & reservation system.",
+    description: "Award-winning restaurant website with immersive menu & online reservation system.",
     longDescription: "An elegant dining experience with parallax storytelling, dynamic menu with dietary filters, table reservation engine, and a virtual tour of the venue.",
     image: "/images/portfolio-2.jpg",
     technologies: ["React", "Node.js", "MongoDB", "GSAP"],
     metrics: "+120% online reservations",
     href: "/portfolio/luxedine",
-    liveUrl: "https://luxedine-restaurant.vercel.app",
+    isConcept: true,
     aspectRatio: "square",
   },
   {
@@ -197,7 +200,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Stripe", "Sanity CMS", "Redis"],
     metrics: "+150% revenue",
     href: "/portfolio/sneakerhub",
-    liveUrl: "https://sneakerhub-store.vercel.app",
+    isConcept: true,
     aspectRatio: "square",
   },
   {
@@ -211,7 +214,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["React", "GSAP", "Framer Motion", "WordPress"],
     metrics: "Featured on Awwwards",
     href: "/portfolio/createfolio",
-    liveUrl: "https://createfolio-portfolio.vercel.app",
+    isConcept: true,
     aspectRatio: "square",
   },
 ];
