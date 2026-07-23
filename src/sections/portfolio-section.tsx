@@ -156,7 +156,13 @@ export function PortfolioSection() {
       .then((res) => res.json())
       .then((data) => {
         if (data.projects) {
-          setProjects(data.projects.filter((p: PortfolioProject) => p.featured).sort((a: PortfolioProject, b: PortfolioProject) => a.order - b.order));
+          // Show max 8 published projects (featured first, then by order)
+          const sorted = [...data.projects].sort((a: PortfolioProject, b: PortfolioProject) => {
+            if (a.featured && !b.featured) return -1;
+            if (!a.featured && b.featured) return 1;
+            return a.order - b.order;
+          });
+          setProjects(sorted.slice(0, 8));
         }
         setLoading(false);
       })

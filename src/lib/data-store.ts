@@ -96,7 +96,21 @@ export function getPortfolioProjects(): PortfolioProject[] {
 }
 
 export function getPublishedProjects(): PortfolioProject[] {
-  return readCollection<PortfolioProject>("portfolio")
+  let projects = readCollection<PortfolioProject>("portfolio");
+  
+  // Auto-seed if empty (first run on Vercel)
+  if (projects.length === 0) {
+    try {
+      // Dynamic import to avoid circular dependency
+      const { seedPortfolio } = require("./seed-data");
+      seedPortfolio();
+      projects = readCollection<PortfolioProject>("portfolio");
+    } catch (e) {
+      console.warn("Auto-seed failed:", e);
+    }
+  }
+  
+  return projects
     .filter((p) => p.status === "published")
     .sort((a, b) => a.order - b.order);
 }
