@@ -6,7 +6,6 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { BackToTop } from "@/components/ui/back-to-top";
-import { SessionProvider } from "@/components/auth/session-provider";
 import { GlobalSchemaMarkup } from "@/components/seo/schema-wrapper";
 import { GoogleAnalytics } from "@/components/integrations/google-analytics";
 import { MicrosoftClarity } from "@/components/integrations/microsoft-clarity";
@@ -127,7 +126,6 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased bg-bg-primary text-text-primary`}
       >
         <TooltipProvider>
-          <SessionProvider>
           {/* Skip to content link — first focusable element */}
           <a
             href="#main-content"
@@ -166,7 +164,6 @@ export default function RootLayout({
           <WhatsAppButton whatsappUrl={siteConfig.contact.whatsapp} />
 
           {/* Toast notifications */}
-          </SessionProvider>
           <Toaster
             position="top-right"
             richColors
