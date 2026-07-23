@@ -60,6 +60,7 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
                 src={project.thumbnail}
                 alt={`${project.title} website preview`}
                 fill
+                unoptimized
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
                 loading={index < 4 ? "eager" : "lazy"}
