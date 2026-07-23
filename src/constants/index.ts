@@ -430,12 +430,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "Facebook",
     label: "Follow us on Facebook",
   },
-  {
-    platform: "LinkedIn",
-    url: "https://linkedin.com/company/novawebs",
-    icon: "Linkedin",
-    label: "Connect on LinkedIn",
-  },
+
 ];
 
 // ─── Contact Info ────────────────────────────────────────────
