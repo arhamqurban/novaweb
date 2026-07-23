@@ -18,16 +18,23 @@ interface ProtectedLinkProps {
 export function ProtectedLink({ href, className, children, onClick }: ProtectedLinkProps) {
   const { data: session } = useSession();
 
+  const loginUrl = `/login?callbackUrl=${encodeURIComponent(href)}`;
+
   const handleClick = (e: React.MouseEvent) => {
     if (!session) {
       e.preventDefault();
-      const callbackUrl = encodeURIComponent(href);
-      window.location.href = `/login?callbackUrl=${callbackUrl}`;
+      window.location.href = loginUrl;
     }
   };
 
+  // If not logged in, link directly to login with callback
+  // If logged in, link to the actual page
   return (
-    <Link href={session ? href : "#"} className={className} onClick={onClick || handleClick}>
+    <Link
+      href={session ? href : loginUrl}
+      className={className}
+      onClick={onClick || handleClick}
+    >
       {children}
     </Link>
   );
