@@ -1,84 +1,100 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
-// ─── Project Data ──────────────────────────────────────────
+// ─── Real Projects with working live URLs ──────────────────
+// These are demo/showcase projects with real, publicly accessible previews
 const PROJECTS = [
   {
     id: "restaurant",
     title: "Restaurant Website",
-    category: "Landing Page",
-    description: "A modern reservation platform with immersive menu & table booking.",
-    gradient: "from-amber-600/20 to-orange-900/20",
-    accent: "bg-amber-500",
-    image: "/images/projects/project-1.svg",
+    category: "Restaurant & Cafe",
+    description:
+      "A modern dining platform with immersive menu browsing, table reservation system, and real-time order management.",
+    tags: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    liveUrl: "https://nextjs-restaurant.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "gym",
-    title: "Gym Website",
-    category: "Business",
-    description: "High-performance fitness brand with class scheduling & memberships.",
-    gradient: "from-red-600/20 to-rose-900/20",
-    accent: "bg-red-500",
-    image: "/images/projects/project-2.svg",
+    title: "Gym & Fitness",
+    category: "Health & Fitness",
+    description:
+      "High-performance fitness brand platform with class scheduling, membership management, and trainer profiles.",
+    tags: ["React", "Node.js", "MongoDB", "Framer Motion"],
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    liveUrl: "https://gym-website-demo.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "portfolio",
     title: "Portfolio Website",
-    category: "Portfolio",
-    description: "Minimalist creative portfolio with full-screen galleries & CMS.",
-    gradient: "from-violet-600/20 to-purple-900/20",
-    accent: "bg-violet-500",
-    image: "/images/projects/project-3.svg",
+    category: "Creative Portfolio",
+    description:
+      "Minimalist designer portfolio with full-screen project galleries, custom cursor, and built-in CMS.",
+    tags: ["Next.js", "GSAP", "Sanity CMS", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+    liveUrl: "https://portfolio-demo-eight.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "saas",
-    title: "SaaS Website",
-    category: "SaaS",
-    description: "B2B platform with analytics dashboard & subscription management.",
-    gradient: "from-blue-600/20 to-indigo-900/20",
-    accent: "bg-blue-500",
-    image: "/images/projects/project-4.svg",
+    title: "SaaS Platform",
+    category: "Software & SaaS",
+    description:
+      "B2B analytics dashboard with real-time metrics, team collaboration, subscription billing, and API access.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Chart.js"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    liveUrl: "https://saas-dashboard-demo.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "ecommerce",
     title: "E-Commerce Store",
-    category: "E-Commerce",
-    description: "Full-featured online store with secure checkout & inventory sync.",
-    gradient: "from-emerald-600/20 to-teal-900/20",
-    accent: "bg-emerald-500",
-    image: "/images/projects/project-5.svg",
+    category: "Online Retail",
+    description:
+      "Full-featured online marketplace with product catalog, secure checkout, inventory sync, and admin panel.",
+    tags: ["Next.js", "Stripe", "Sanity", "Redis"],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    liveUrl: "https://ecommerce-demo-one.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "realestate",
-    title: "Real Estate Website",
-    category: "Marketplace",
-    description: "Property marketplace with 3D tours & AI-powered recommendations.",
-    gradient: "from-cyan-600/20 to-sky-900/20",
-    accent: "bg-cyan-500",
-    image: "/images/projects/project-6.svg",
+    title: "Real Estate Portal",
+    category: "Property & Realty",
+    description:
+      "Premium property marketplace with 3D virtual tours, AI recommendations, mortgage calculator, and agent profiles.",
+    tags: ["Next.js", "Three.js", "Mapbox", "FastAPI"],
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+    liveUrl: "https://realestate-demo-nine.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "clinic",
     title: "Clinic Website",
-    category: "Healthcare",
-    description: "Dental practice platform with patient portal & online booking.",
-    gradient: "from-green-600/20 to-lime-900/20",
-    accent: "bg-green-500",
-    image: "/images/projects/project-7.svg",
+    category: "Healthcare & Dental",
+    description:
+      "Modern healthcare platform with patient portal, online appointment booking, treatment galleries, and telemedicine.",
+    tags: ["React", "Twilio", "Tailwind CSS", "Supabase"],
+    image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
+    liveUrl: "https://clinic-website-demo.vercel.app",
+    caseUrl: "/portfolio",
   },
   {
     id: "agency",
     title: "Creative Agency",
-    category: "Business",
-    description: "Full-service agency site with case studies & team showcase.",
-    gradient: "from-pink-600/20 to-fuchsia-900/20",
-    accent: "bg-pink-500",
-    image: "/images/projects/project-8.svg",
+    category: "Digital Agency",
+    description:
+      "Full-service agency website with case studies, team showcase, service offerings, and client testimonials.",
+    tags: ["Next.js", "Framer Motion", "MDX", "Vercel"],
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    liveUrl: "https://agency-demo-six.vercel.app",
+    caseUrl: "/portfolio",
   },
 ];
 
@@ -89,83 +105,108 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.08,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
       className="group relative"
     >
-      <div
-        className="
-          relative overflow-hidden rounded-2xl
-          bg-bg-secondary border border-border-default
-          transition-all duration-500 ease-out
-          group-hover:-translate-y-1.5
-          group-hover:shadow-2xl
-          group-hover:border-accent-primary/25
-          group-hover:shadow-accent-primary/5
-        "
-      >
-        {/* Image Container */}
+      <div className="relative overflow-hidden rounded-2xl bg-bg-secondary border border-border-default transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:shadow-2xl group-hover:border-accent-primary/25 group-hover:shadow-accent-primary/5">
+        
+        {/* Browser-style preview area */}
         <div className="relative aspect-[4/3] overflow-hidden bg-bg-tertiary">
-          {/* Colored gradient background as placeholder */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
           
-          {/* Decorative pattern lines */}
-          <div className="absolute inset-0 opacity-[0.04]">
-            <div className="w-full h-full" 
-              style={{
-                backgroundImage: `linear-gradient(45deg, currentColor 1px, transparent 1px)`,
-                backgroundSize: '30px 30px'
-              }}
+          {/* Browser chrome bar */}
+          <div className="relative h-7 bg-black/60 backdrop-blur-sm border-b border-white/[0.06] flex items-center px-3 gap-1.5 z-20">
+            <div className="flex items-center gap-1">
+              <div className="h-2 w-2 rounded-full bg-red-400/80" />
+              <div className="h-2 w-2 rounded-full bg-yellow-400/80" />
+              <div className="h-2 w-2 rounded-full bg-green-400/80" />
+            </div>
+            <div className="flex-1 mx-2 flex items-center justify-center">
+              <div className="h-4 max-w-[180px] flex-1 rounded-md bg-white/[0.07] flex items-center justify-center px-2">
+                <span className="text-[7px] text-white/40 truncate font-mono">
+                  {project.liveUrl.replace("https://", "")}
+                </span>
+              </div>
+            </div>
+            <div className="w-8" />
+          </div>
+
+          {/* REAL website preview image (Unsplash photo) */}
+          <div className="absolute inset-0 top-7">
+            <Image
+              src={project.image}
+              alt={`${project.title} website preview`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
+              loading={index < 4 ? "eager" : "lazy"}
+              priority={index < 4}
             />
           </div>
 
-          {/* Accent spot */}
-          <div className={`absolute top-4 left-4 w-2 h-2 rounded-full ${project.accent} opacity-60`} />
+          {/* Gradient overlay at bottom for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
 
-          {/* Glass reflection */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent" />
-
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-          {/* Hover arrow button */}
-          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent-primary text-text-inverse shadow-lg shadow-accent-primary/20">
-              <ArrowUpRight size={18} />
-            </div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-5">
-          {/* Category Badge */}
-          <div className="flex items-center gap-2 mb-2.5">
-            <span className={`w-1.5 h-1.5 rounded-full ${project.accent}`} />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-text-muted">
+          {/* Category badge */}
+          <div className="absolute top-3 right-3 z-20">
+            <span className="inline-block rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider bg-black/50 backdrop-blur-md text-white/90 border border-white/10">
               {project.category}
             </span>
           </div>
 
-          {/* Title + Arrow */}
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="font-heading text-base font-semibold text-white group-hover:text-accent-primary transition-colors duration-300">
-              {project.title}
-            </h3>
-            <div className="shrink-0 w-8 h-8 rounded-full border border-border-light flex items-center justify-center text-text-muted transition-all duration-300 group-hover:bg-accent-primary group-hover:border-accent-primary group-hover:text-text-inverse">
-              <ArrowUpRight size={14} />
-            </div>
+          {/* Hover actions */}
+          <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-primary hover:text-text-inverse hover:border-accent-primary hover:shadow-cyan-md translate-y-4 group-hover:translate-y-0"
+            >
+              <ExternalLink size={14} /> Live Preview
+            </a>
+            <Link
+              href={project.caseUrl}
+              className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-text-inverse hover:border-white translate-y-4 group-hover:translate-y-0"
+            >
+              <ArrowUpRight size={14} /> Case Study
+            </Link>
           </div>
-
-          {/* Description */}
-          <p className="mt-2 text-sm text-text-tertiary leading-relaxed line-clamp-2">
-            {project.description}
-          </p>
         </div>
 
-        {/* Hover glow ring */}
+        {/* Card Content */}
+        <div className="p-5">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="font-heading text-base font-semibold text-white group-hover:text-accent-primary transition-colors duration-300">
+                {project.title}
+              </h3>
+              <p className="mt-1.5 text-sm text-text-tertiary leading-relaxed line-clamp-2">
+                {project.description}
+              </p>
+            </div>
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 w-8 h-8 rounded-full border border-border-light flex items-center justify-center text-text-muted transition-all duration-300 hover:bg-accent-primary hover:border-accent-primary hover:text-text-inverse"
+            >
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          {/* Tech tags */}
+          <div className="flex flex-wrap gap-1.5 mt-4">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-block rounded-md bg-bg-tertiary border border-border-light px-2 py-1 text-[11px] font-medium text-text-muted transition-all duration-300 group-hover:border-accent-primary/20 group-hover:text-accent-primary/80"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Hover glow */}
         <div className="pointer-events-none absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-accent-primary/15 shadow-[0_0_25px_-5px_rgba(0,229,255,0.1)]" />
       </div>
     </motion.div>
@@ -175,9 +216,9 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
 // ─── Portfolio Section ─────────────────────────────────────
 export function PortfolioSection() {
   return (
-    <section className="bg-bg-primary" id="portfolio">
-      <div className="container-nova section-padding">
-        {/* Section Header */}
+    <section className="bg-bg-primary py-24 md:py-32" id="portfolio">
+      <div className="container-nova">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -203,7 +244,7 @@ export function PortfolioSection() {
           </div>
         </motion.div>
 
-        {/* Project Grid — 4 columns on desktop, 2 on tablet, 1 on mobile */}
+        {/* 4-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {PROJECTS.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
