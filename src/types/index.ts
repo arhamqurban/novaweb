@@ -29,6 +29,7 @@ export interface PortfolioItem {
   metrics: string;
   href: string;
   liveUrl?: string;
+  isConcept?: boolean;
   aspectRatio: "wide" | "tall" | "square";
 }
 

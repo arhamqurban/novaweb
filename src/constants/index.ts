@@ -141,7 +141,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Stripe", "Supabase", "Framer Motion"],
     metrics: "+85% membership signups",
     href: "/portfolio/iron-gym",
-    liveUrl: "https://example.com",
+    liveUrl: "https://ironforge-gym.vercel.app",
     aspectRatio: "square",
   },
   {
@@ -155,7 +155,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["React", "Node.js", "MongoDB", "GSAP"],
     metrics: "+120% online reservations",
     href: "/portfolio/luxedine",
-    liveUrl: "https://example.com",
+    liveUrl: "https://luxedine-restaurant.vercel.app",
     aspectRatio: "square",
   },
   {
@@ -169,7 +169,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "TypeScript", "Twilio", "Tailwind CSS"],
     metrics: "+60% new patients",
     href: "/portfolio/dentasmile",
-    liveUrl: "https://example.com",
+    isConcept: true,
     aspectRatio: "square",
   },
   {
@@ -183,7 +183,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Three.js", "PostgreSQL", "Mapbox"],
     metrics: "3× lead generation",
     href: "/portfolio/estatevue",
-    liveUrl: "https://example.com",
+    isConcept: true,
     aspectRatio: "square",
   },
   {
@@ -197,6 +197,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Stripe", "Sanity CMS", "Redis"],
     metrics: "+150% revenue",
     href: "/portfolio/sneakerhub",
+    liveUrl: "https://sneakerhub-store.vercel.app",
     aspectRatio: "square",
   },
   {
@@ -210,6 +211,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["React", "GSAP", "Framer Motion", "WordPress"],
     metrics: "Featured on Awwwards",
     href: "/portfolio/createfolio",
+    liveUrl: "https://createfolio-portfolio.vercel.app",
     aspectRatio: "square",
   },
 ];

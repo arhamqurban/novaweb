@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Eye } from "lucide-react";
 
 // ─── Type for portfolio items from CMS ─────────────────────
 interface PortfolioItem {
@@ -19,6 +19,7 @@ interface PortfolioItem {
   technologies: string[];
   industry: string;
   liveUrl: string;
+  isConcept?: boolean;
 }
 
 // ─── Filter Categories ─────────────────────────────────────
@@ -344,8 +345,18 @@ function PortfolioCard({
           {/* Gradient Overlay on image hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
-          {/* Top-right category badge */}
-          <div className="absolute top-3 right-3 z-30">
+          {/* Top-right badges */}
+          <div className="absolute top-3 right-3 z-30 flex gap-2">
+            {item.isConcept && (
+              <span
+                className={`
+                  inline-block rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider
+                  bg-yellow-500/20 backdrop-blur-md text-yellow-300 border border-yellow-400/20
+                `}
+              >
+                Concept
+              </span>
+            )}
             <span
               className={`
                 inline-block rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-wider
@@ -374,8 +385,17 @@ function PortfolioCard({
                 translate-y-4 group-hover:translate-y-0
               "
             >
-              <ExternalLink size={16} />
-              View Live Preview
+              {item.isConcept ? (
+                <>
+                  <Eye size={16} />
+                  View Case Study
+                </>
+              ) : (
+                <>
+                  <ExternalLink size={16} />
+                  View Live Preview
+                </>
+              )}
             </a>
           </div>
 
@@ -419,22 +439,41 @@ function PortfolioCard({
             <span className="text-xs font-semibold text-accent-primary">
               {item.metrics}
             </span>
-            <Link
-              href={`/portfolio/${item.id}`}
-              className="
-                inline-flex items-center gap-1.5
-                text-xs font-medium text-text-secondary
-                transition-all duration-300
-                hover:text-accent-primary
-                group/link
-              "
-            >
-              View Details
-              <ArrowRight
-                size={12}
-                className="transition-transform duration-300 group-hover/link:translate-x-1"
-              />
-            </Link>
+            <div className="flex items-center gap-3">
+              {item.liveUrl && (
+                <a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex items-center gap-1
+                    text-xs font-medium text-accent-primary
+                    transition-all duration-300
+                    hover:text-accent-hover
+                    group/live
+                  "
+                >
+                  <ExternalLink size={11} />
+                  Live
+                </a>
+              )}
+              <Link
+                href={`/portfolio/${item.id}`}
+                className="
+                  inline-flex items-center gap-1.5
+                  text-xs font-medium text-text-secondary
+                  transition-all duration-300
+                  hover:text-accent-primary
+                  group/link
+                "
+              >
+                Details
+                <ArrowRight
+                  size={12}
+                  className="transition-transform duration-300 group-hover/link:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
         </div>
 
