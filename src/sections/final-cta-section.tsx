@@ -49,29 +49,32 @@ export function FinalCTASection({ contact }: FinalCTASectionProps) {
           {/* Alternative Contact */}
           <div className="mt-8">
             <p className="caption text-text-muted mb-4">Or reach us directly:</p>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href={`mailto:${contact.email}`}
+                className="group flex items-center gap-2 rounded-lg border border-border-default bg-surface-default px-5 py-3 text-sm text-text-secondary transition-all duration-300 hover:border-accent-primary hover:shadow-cyan-sm hover:text-accent-primary"
+                aria-label={`Send email to ${contact.email}`}
+              >
+                <Mail size={16} className="shrink-0 text-accent-primary" />
+                <span>{contact.email}</span>
+              </a>
+              <a
+                href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                className="group flex items-center gap-2 rounded-lg border border-border-default bg-surface-default px-5 py-3 text-sm text-text-secondary transition-all duration-300 hover:border-accent-primary hover:shadow-cyan-sm hover:text-accent-primary"
+                aria-label={`Call us at ${contact.phone}`}
+              >
+                <Phone size={16} className="shrink-0 text-accent-primary" />
+                <span>{contact.phone}</span>
+              </a>
               <a
                 href={contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border-light text-text-tertiary transition-colors hover:border-accent-primary hover:text-accent-primary"
+                className="group flex items-center gap-2 rounded-lg border border-border-default bg-surface-default px-5 py-3 text-sm text-text-secondary transition-all duration-300 hover:border-accent-primary hover:shadow-cyan-sm hover:text-accent-primary"
                 aria-label="Chat on WhatsApp"
               >
-                <MessageCircle size={18} />
-              </a>
-              <a
-                href={`mailto:${contact.email}`}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border-light text-text-tertiary transition-colors hover:border-accent-primary hover:text-accent-primary"
-                aria-label="Send email"
-              >
-                <Mail size={18} />
-              </a>
-              <a
-                href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border-light text-text-tertiary transition-colors hover:border-accent-primary hover:text-accent-primary"
-                aria-label="Call us"
-              >
-                <Phone size={18} />
+                <MessageCircle size={16} className="shrink-0 text-accent-primary" />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>

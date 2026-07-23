@@ -6,11 +6,11 @@
 - Local:         http://localhost:3001
 - Network:       http://192.168.1.8:3001
 - Environments: .env.local, .env
-✓ Ready in 586ms
+✓ Ready in 611ms
 
 📩 Form submission received
-📦 Body parsed: {"name":"Test User","email":"novawebs09@gmail.com","phone":"+92 302 6684097","service":"web-design","message":"Testing email to client","type":"contact","_honeypot":""}
+📦 Body parsed: {"name":"Test User","email":"marhamqurban@gmail.com","phone":"+92 302 6684097","service":"web-design","message":"Testing if email reaches this address","type":"contact","_honeypot":""}
 📝 Saved in memory (total: 1)
-✅ Form saved to disk: contact-2026-07-23T16-50-49-710Z-rvdi1u.json
+✅ Form saved to disk: contact-2026-07-23T16-53-56-940Z-wpts8f.json
 ✅ Email sent via EmailJS
- POST /api/submit 200 in 1923ms (next.js: 160ms, application-code: 1762ms)
+ POST /api/submit 200 in 1900ms (next.js: 170ms, application-code: 1730ms)
