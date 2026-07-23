@@ -1,105 +1,28 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Loader2 } from "lucide-react";
 
-// ─── Real Projects with working live URLs ──────────────────
-// These are demo/showcase projects with real, publicly accessible previews
-const PROJECTS = [
-  {
-    id: "restaurant",
-    title: "Restaurant Website",
-    category: "Restaurant & Cafe",
-    description:
-      "A modern dining platform with immersive menu browsing, table reservation system, and real-time order management.",
-    tags: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-    liveUrl: "https://nextjs-restaurant.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "gym",
-    title: "Gym & Fitness",
-    category: "Health & Fitness",
-    description:
-      "High-performance fitness brand platform with class scheduling, membership management, and trainer profiles.",
-    tags: ["React", "Node.js", "MongoDB", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
-    liveUrl: "https://gym-website-demo.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "portfolio",
-    title: "Portfolio Website",
-    category: "Creative Portfolio",
-    description:
-      "Minimalist designer portfolio with full-screen project galleries, custom cursor, and built-in CMS.",
-    tags: ["Next.js", "GSAP", "Sanity CMS", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-    liveUrl: "https://portfolio-demo-eight.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "saas",
-    title: "SaaS Platform",
-    category: "Software & SaaS",
-    description:
-      "B2B analytics dashboard with real-time metrics, team collaboration, subscription billing, and API access.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Chart.js"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    liveUrl: "https://saas-dashboard-demo.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "ecommerce",
-    title: "E-Commerce Store",
-    category: "Online Retail",
-    description:
-      "Full-featured online marketplace with product catalog, secure checkout, inventory sync, and admin panel.",
-    tags: ["Next.js", "Stripe", "Sanity", "Redis"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-    liveUrl: "https://ecommerce-demo-one.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "realestate",
-    title: "Real Estate Portal",
-    category: "Property & Realty",
-    description:
-      "Premium property marketplace with 3D virtual tours, AI recommendations, mortgage calculator, and agent profiles.",
-    tags: ["Next.js", "Three.js", "Mapbox", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-    liveUrl: "https://realestate-demo-nine.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "clinic",
-    title: "Clinic Website",
-    category: "Healthcare & Dental",
-    description:
-      "Modern healthcare platform with patient portal, online appointment booking, treatment galleries, and telemedicine.",
-    tags: ["React", "Twilio", "Tailwind CSS", "Supabase"],
-    image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
-    liveUrl: "https://clinic-website-demo.vercel.app",
-    caseUrl: "/portfolio",
-  },
-  {
-    id: "agency",
-    title: "Creative Agency",
-    category: "Digital Agency",
-    description:
-      "Full-service agency website with case studies, team showcase, service offerings, and client testimonials.",
-    tags: ["Next.js", "Framer Motion", "MDX", "Vercel"],
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
-    liveUrl: "https://agency-demo-six.vercel.app",
-    caseUrl: "/portfolio",
-  },
-];
+interface PortfolioProject {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  technologies: string[];
+  metrics: string;
+  thumbnail: string;
+  liveUrl: string;
+  caseUrl: string;
+  featured: boolean;
+  order: number;
+}
 
-// ─── Project Card ──────────────────────────────────────────
-function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: number }) {
+function ProjectCard({ project, index }: { project: PortfolioProject; index: number }) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -123,27 +46,34 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             <div className="flex-1 mx-2 flex items-center justify-center">
               <div className="h-4 max-w-[180px] flex-1 rounded-md bg-white/[0.07] flex items-center justify-center px-2">
                 <span className="text-[7px] text-white/40 truncate font-mono">
-                  {project.liveUrl.replace("https://", "")}
+                  {project.liveUrl ? project.liveUrl.replace("https://", "") : "demo.preview"}
                 </span>
               </div>
             </div>
             <div className="w-8" />
           </div>
 
-          {/* REAL website preview image (Unsplash photo) */}
+          {/* Website preview image */}
           <div className="absolute inset-0 top-7">
-            <Image
-              src={project.image}
-              alt={`${project.title} website preview`}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
-              loading={index < 4 ? "eager" : "lazy"}
-              priority={index < 4}
-            />
+            {!imgError && project.thumbnail ? (
+              <Image
+                src={project.thumbnail}
+                alt={`${project.title} website preview`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                loading={index < 4 ? "eager" : "lazy"}
+                priority={index < 4}
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="flex items-center justify-center h-full bg-gradient-to-br from-bg-tertiary to-bg-hover">
+                <span className="text-text-muted text-xs">{project.title}</span>
+              </div>
+            )}
           </div>
 
-          {/* Gradient overlay at bottom for text readability */}
+          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
 
           {/* Category badge */}
@@ -155,14 +85,16 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
 
           {/* Hover actions */}
           <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-primary hover:text-text-inverse hover:border-accent-primary hover:shadow-cyan-md translate-y-4 group-hover:translate-y-0"
-            >
-              <ExternalLink size={14} /> Live Preview
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-primary hover:text-text-inverse hover:border-accent-primary hover:shadow-cyan-md translate-y-4 group-hover:translate-y-0"
+              >
+                <ExternalLink size={14} /> Live Preview
+              </a>
+            )}
             <Link
               href={project.caseUrl}
               className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-text-inverse hover:border-white translate-y-4 group-hover:translate-y-0"
@@ -183,22 +115,24 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
                 {project.description}
               </p>
             </div>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 w-8 h-8 rounded-full border border-border-light flex items-center justify-center text-text-muted transition-all duration-300 hover:bg-accent-primary hover:border-accent-primary hover:text-text-inverse"
-            >
-              <ExternalLink size={14} />
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 w-8 h-8 rounded-full border border-border-light flex items-center justify-center text-text-muted transition-all duration-300 hover:bg-accent-primary hover:border-accent-primary hover:text-text-inverse"
+              >
+                <ExternalLink size={14} />
+              </a>
+            )}
           </div>
 
           {/* Tech tags */}
           <div className="flex flex-wrap gap-1.5 mt-4">
-            {project.tags.map((tag) => (
+            {project.technologies.slice(0, 4).map((tag) => (
               <span
                 key={tag}
-                className="inline-block rounded-md bg-bg-tertiary border border-border-light px-2 py-1 text-[11px] font-medium text-text-muted transition-all duration-300 group-hover:border-accent-primary/20 group-hover:text-accent-primary/80"
+                className="inline-block rounded-md bg-bg-tertiary border border-border-light px-2.5 py-1 text-[11px] font-medium text-text-muted transition-all duration-300 group-hover:border-accent-primary/20 group-hover:text-accent-primary/80"
               >
                 {tag}
               </span>
@@ -213,8 +147,22 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
   );
 }
 
-// ─── Portfolio Section ─────────────────────────────────────
 export function PortfolioSection() {
+  const [projects, setProjects] = useState<PortfolioProject[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/portfolio")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.projects) {
+          setProjects(data.projects.filter((p: PortfolioProject) => p.featured).sort((a: PortfolioProject, b: PortfolioProject) => a.order - b.order));
+        }
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
+
   return (
     <section className="bg-bg-primary py-24 md:py-32" id="portfolio">
       <div className="container-nova">
@@ -244,12 +192,23 @@ export function PortfolioSection() {
           </div>
         </motion.div>
 
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {PROJECTS.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
+        {/* Project Grid */}
+        {loading ? (
+          <div className="flex items-center justify-center py-20">
+            <Loader2 size={32} className="animate-spin text-accent-primary" />
+          </div>
+        ) : projects.length === 0 ? (
+          <div className="rounded-xl border border-border-default bg-surface-default p-12 text-center">
+            <p className="text-text-muted">No featured projects yet.</p>
+            <p className="text-text-tertiary text-sm mt-2">Add projects from the admin panel and mark them as featured.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        )}
 
         {/* CTA Banner */}
         <motion.div

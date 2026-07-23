@@ -112,3 +112,25 @@ export interface Technology {
   name: string;
   category: string;
 }
+
+export interface PortfolioProject {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  longDescription: string;
+  technologies: string[];
+  clientName: string;
+  completionDate: string;
+  featured: boolean;
+  order: number;
+  status: "draft" | "published";
+  thumbnail: string;
+  screenshots: string[];
+  liveUrl: string;
+  githubUrl: string;
+  caseStudy: string;
+  metrics: string;
+  createdAt: string;
+  updatedAt: string;
+}
