@@ -21,7 +21,10 @@ interface FormPayload {
   _honeypot?: string;
 }
 
-const SUBMISSIONS_DIR = path.join(process.cwd(), "src", "submissions");
+// Use /tmp on Vercel (ephemeral), local disk in development
+const SUBMISSIONS_DIR = process.env.VERCEL
+  ? path.join("/tmp", "submissions")
+  : path.join(process.cwd(), "src", "submissions");
 
 function ensureDir() {
   if (!fs.existsSync(SUBMISSIONS_DIR)) {
@@ -108,19 +111,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, message: errors.join(". ") }, { status: 400 });
     }
 
-    // 1. Save to JSON
-    ensureDir();
-    const filename = generateFilename(data.type || "contact");
-    const filePath = path.join(SUBMISSIONS_DIR, filename);
-    const submission = {
-      ...data,
-      _honeypot: undefined,
-      receivedAt: new Date().toISOString(),
-      userAgent: request.headers.get("user-agent") || "",
-      ip: request.headers.get("x-forwarded-for") || "local",
-    };
-    fs.writeFileSync(filePath, JSON.stringify(submission, null, 2));
-    console.log(`✅ Form saved: ${filename}`);
+    // 1. Save submission data
+    let savedLocally = false;
+    try {
+      ensureDir();
+      const filename = generateFilename(data.type || "contact");
+      const filePath = path.join(SUBMISSIONS_DIR, filename);
+      const submission = {
+        ...data,
+        _honeypot: undefined,
+        receivedAt: new Date().toISOString(),
+        userAgent: request.headers.get("user-agent") || "",
+        ip: request.headers.get("x-forwarded-for") || "local",
+      };
+      fs.writeFileSync(filePath, JSON.stringify(submission, null, 2));
+      savedLocally = true;
+      console.log(`✅ Form saved: ${filename}`);
+    } catch (saveError) {
+      console.warn("⚠️ Could not save submission file (non-fatal):", saveError);
+    }
 
     // 2. Send email (server-side — no CORS)
     await sendEmailJS(data);

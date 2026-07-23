@@ -6,7 +6,9 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const SUBMISSIONS_DIR = path.join(process.cwd(), "src", "submissions");
+const SUBMISSIONS_DIR = process.env.VERCEL
+  ? path.join("/tmp", "submissions")
+  : path.join(process.cwd(), "src", "submissions");
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
 
 export async function GET(request: NextRequest) {
