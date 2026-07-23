@@ -1,17 +1,68 @@
-<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" fill="#1a1a1a"/>
-  <rect x="0" y="0" width="800" height="40" fill="#222"/>
-  <circle cx="20" cy="20" r="5" fill="#FF5F56"/>
-  <circle cx="38" cy="20" r="5" fill="#FFBD2E"/>
-  <circle cx="56" cy="20" r="5" fill="#27C93F"/>
-  <rect x="300" y="80" width="200" height="40" rx="8" fill="#333"/>
-  <rect x="240" y="140" width="320" height="14" rx="4" fill="#2a2a2a"/>
-  <rect x="60" y="190" width="160" height="200" rx="8" fill="#222"/>
-  <rect x="240" y="190" width="160" height="200" rx="8" fill="#222"/>
-  <rect x="420" y="190" width="160" height="200" rx="8" fill="#222"/>
-  <rect x="600" y="190" width="140" height="200" rx="8" fill="#222"/>
-  <rect x="60" y="410" width="160" height="10" rx="4" fill="#333"/>
-  <rect x="240" y="410" width="160" height="10" rx="4" fill="#333"/>
-  <rect x="420" y="410" width="160" height="10" rx="4" fill="#333"/>
-  <rect x="600" y="410" width="140" height="10" rx="4" fill="#333"/>
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gym & Fitness Website Mockup -->
+  <rect width="1200" height="900" fill="#0A0A0A"/>
+  <rect width="1200" height="44" fill="#1A1A1A"/>
+  <rect x="0" y="44" width="1200" height="1" fill="#2A2A2A"/>
+  <circle cx="20" cy="22" r="5" fill="#FF5F56"/>
+  <circle cx="38" cy="22" r="5" fill="#FFBD2E"/>
+  <circle cx="56" cy="22" r="5" fill="#27C93F"/>
+  <rect x="350" y="14" width="500" height="16" rx="8" fill="#2A2A2A"/>
+  <!-- Dark Hero -->
+  <rect x="0" y="45" width="1200" height="500" fill="#0D0D0D"/>
+  <rect x="0" y="45" width="1200" height="500" fill="url(#gymGrad)" opacity="0.6"/>
+  <!-- Nav -->
+  <rect x="60" y="65" width="50" height="14" rx="4" fill="#FF4444"/>
+  <rect x="900" y="65" width="70" height="10" rx="4" fill="#333"/>
+  <rect x="985" y="65" width="70" height="10" rx="4" fill="#333"/>
+  <rect x="1070" y="60" width="80" height="28" rx="14" fill="#FF4444"/>
+  <!-- Hero Content -->
+  <rect x="100" y="180" width="480" height="18" rx="4" fill="#FF4444" opacity="0.25"/>
+  <rect x="100" y="210" width="460" height="54" rx="6" fill="#FF4444" opacity="0.1"/>
+  <rect x="100" y="276" width="340" height="14" rx="4" fill="#333"/>
+  <rect x="100" y="298" width="280" height="14" rx="4" fill="#2A2A2A"/>
+  <rect x="100" y="340" width="170" height="48" rx="24" fill="#FF4444"/>
+  <rect x="290" y="340" width="150" height="48" rx="24" fill="#1A1A1A" stroke="#333" stroke-width="1"/>
+  <!-- Stats -->
+  <rect x="100" y="430" width="120" height="36" rx="6" fill="#1A1A1A"/>
+  <rect x="115" y="438" width="40" height="8" rx="4" fill="#FF4444" opacity="0.6"/>
+  <rect x="115" y="450" width="90" height="6" rx="4" fill="#2A2A2A"/>
+  <rect x="240" y="430" width="120" height="36" rx="6" fill="#1A1A1A"/>
+  <rect x="255" y="438" width="40" height="8" rx="4" fill="#FF4444" opacity="0.6"/>
+  <rect x="255" y="450" width="90" height="6" rx="4" fill="#2A2A2A"/>
+  <rect x="380" y="430" width="120" height="36" rx="6" fill="#1A1A1A"/>
+  <rect x="395" y="438" width="40" height="8" rx="4" fill="#FF4444" opacity="0.6"/>
+  <rect x="395" y="450" width="90" height="6" rx="4" fill="#2A2A2A"/>
+  <!-- Hero Image -->
+  <rect x="620" y="120" width="500" height="380" rx="12" fill="#151515"/>
+  <rect x="650" y="150" width="440" height="310" rx="8" fill="#1A1A1A"/>
+  <circle cx="870" cy="305" r="80" fill="#FF4444" opacity="0.08"/>
+  <rect x="750" y="260" width="240" height="14" rx="4" fill="#FF4444" opacity="0.2"/>
+  <rect x="790" y="282" width="160" height="10" rx="4" fill="#2A2A2A"/>
+  <!-- Classes Section -->
+  <rect x="0" y="545" width="1200" height="355" fill="#0A0A0A"/>
+  <rect x="480" y="570" width="240" height="16" rx="4" fill="#FF4444" opacity="0.15"/>
+  <rect x="530" y="596" width="140" height="12" rx="4" fill="#333"/>
+  <!-- Class Cards -->
+  <rect x="60" y="630" width="250" height="230" rx="12" fill="#111" stroke="#2A2A2A" stroke-width="1"/>
+  <rect x="80" y="650" width="210" height="120" rx="8" fill="#1A1A1A"/>
+  <rect x="100" y="680" width="170" height="60" rx="6" fill="#FF4444" opacity="0.03"/>
+  <rect x="80" y="785" width="210" height="10" rx="4" fill="#FF4444" opacity="0.3"/>
+  <rect x="80" y="805" width="160" height="8" rx="4" fill="#2A2A2A"/>
+  <rect x="330" y="630" width="250" height="230" rx="12" fill="#111" stroke="#2A2A2A" stroke-width="1"/>
+  <rect x="350" y="650" width="210" height="120" rx="8" fill="#1A1A1A"/>
+  <rect x="350" y="785" width="210" height="10" rx="4" fill="#FF4444" opacity="0.3"/>
+  <rect x="350" y="805" width="160" height="8" rx="4" fill="#2A2A2A"/>
+  <rect x="600" y="630" width="250" height="230" rx="12" fill="#111" stroke="#2A2A2A" stroke-width="1"/>
+  <rect x="620" y="650" width="210" height="120" rx="8" fill="#1A1A1A"/>
+  <rect x="620" y="785" width="210" height="10" rx="4" fill="#FF4444" opacity="0.3"/>
+  <rect x="620" y="805" width="160" height="8" rx="4" fill="#2A2A2A"/>
+  <rect x="870" y="630" width="250" height="230" rx="12" fill="#111" stroke="#2A2A2A" stroke-width="1"/>
+  <rect x="890" y="650" width="210" height="120" rx="8" fill="#1A1A1A"/>
+  <rect x="890" y="785" width="210" height="10" rx="4" fill="#FF4444" opacity="0.3"/>
+  <rect x="890" y="805" width="160" height="8" rx="4" fill="#2A2A2A"/>
+  <!-- Footer -->
+  <rect x="0" y="820" width="1200" height="80" fill="#0D0D0D"/>
+  <rect x="60" y="848" width="100" height="10" rx="4" fill="#333"/>
+  <rect x="1040" y="848" width="100" height="10" rx="4" fill="#333"/>
+  <defs><linearGradient id="gymGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF4444" stop-opacity="0.08"/><stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/></linearGradient></defs>
 </svg>
