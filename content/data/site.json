@@ -68,10 +68,8 @@
   ],
   "socialLinks": [
       { "platform": "Instagram", "url": "https://www.instagram.com/novawebs9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", "icon": "Instagram", "label": "Follow us on Instagram" },
-      { "platform": "Facebook", "url": "https://facebook.com/NovaWebs", "icon": "Facebook", "label": "Follow us on Facebook" },
-      { "platform": "LinkedIn", "url": "https://linkedin.com/company/novawebs", "icon": "Linkedin", "label": "Connect on LinkedIn" },
-      { "platform": "TikTok", "url": "https://tiktok.com/@novawebs", "icon": "Music2", "label": "Follow on TikTok" },
-      { "platform": "YouTube", "url": "https://youtube.com/@novawebs", "icon": "Youtube", "label": "Watch on YouTube" }
+      { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61591970637353", "icon": "Facebook", "label": "Follow us on Facebook" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com/company/novawebs", "icon": "Linkedin", "label": "Connect on LinkedIn" }
     ],
   "trustBadges": [
     { "label": "Secure SSL Encryption", "icon": "Shield" },

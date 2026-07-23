@@ -28,6 +28,7 @@ export interface PortfolioItem {
   technologies: string[];
   metrics: string;
   href: string;
+  liveUrl?: string;
   aspectRatio: "wide" | "tall" | "square";
 }
 

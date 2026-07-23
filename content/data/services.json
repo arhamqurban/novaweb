@@ -41,15 +41,7 @@
       "href": "/services#branding",
       "order": 4
     },
-    {
-      "id": "seo",
-      "title": "SEO",
-      "description": "Grow organic traffic and dominate search rankings.",
-      "icon": "TrendingUp",
-      "features": ["Technical SEO", "On-Page SEO", "Content Strategy", "Local SEO", "Performance Audits"],
-      "href": "/services#seo",
-      "order": 5
-    },
+
     {
       "id": "support",
       "title": "Support & Maintenance",

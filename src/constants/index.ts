@@ -46,7 +46,6 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Web Development", href: "/services#development" },
       { label: "E-Commerce", href: "/services#ecommerce" },
       { label: "Branding", href: "/services#branding" },
-      { label: "SEO", href: "/services#seo" },
     ],
   },
   { label: "Portfolio", href: "/portfolio" },
@@ -112,20 +111,7 @@ export const SERVICES: Service[] = [
     ],
     href: "/services#branding",
   },
-  {
-    id: "seo",
-    title: "SEO",
-    description: "Grow organic traffic and dominate search rankings.",
-    icon: "TrendingUp",
-    features: [
-      "Technical SEO",
-      "On-Page SEO",
-      "Content Strategy",
-      "Local SEO",
-      "Performance Audits",
-    ],
-    href: "/services#seo",
-  },
+
   {
     id: "support",
     title: "Support & Maintenance",
@@ -155,6 +141,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Stripe", "Supabase", "Framer Motion"],
     metrics: "+85% membership signups",
     href: "/portfolio/iron-gym",
+    liveUrl: "https://example.com",
     aspectRatio: "square",
   },
   {
@@ -168,6 +155,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["React", "Node.js", "MongoDB", "GSAP"],
     metrics: "+120% online reservations",
     href: "/portfolio/luxedine",
+    liveUrl: "https://example.com",
     aspectRatio: "square",
   },
   {
@@ -181,6 +169,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "TypeScript", "Twilio", "Tailwind CSS"],
     metrics: "+60% new patients",
     href: "/portfolio/dentasmile",
+    liveUrl: "https://example.com",
     aspectRatio: "square",
   },
   {
@@ -194,6 +183,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Three.js", "PostgreSQL", "Mapbox"],
     metrics: "3× lead generation",
     href: "/portfolio/estatevue",
+    liveUrl: "https://example.com",
     aspectRatio: "square",
   },
   {
@@ -436,7 +426,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     platform: "Facebook",
-    url: "https://facebook.com/NovaWebs",
+    url: "https://www.facebook.com/profile.php?id=61591970637353",
     icon: "Facebook",
     label: "Follow us on Facebook",
   },
@@ -445,18 +435,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: "https://linkedin.com/company/novawebs",
     icon: "Linkedin",
     label: "Connect on LinkedIn",
-  },
-  {
-    platform: "TikTok",
-    url: "https://tiktok.com/@novawebs",
-    icon: "Music2",
-    label: "Follow on TikTok",
-  },
-  {
-    platform: "YouTube",
-    url: "https://youtube.com/@novawebs",
-    icon: "Youtube",
-    label: "Watch on YouTube",
   },
 ];
 
