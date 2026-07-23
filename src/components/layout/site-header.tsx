@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ProtectedLink } from "@/components/auth/protected-link";
 interface SiteHeaderProps {
   siteName: string;
   ctaText: string;
@@ -122,12 +123,12 @@ export function SiteHeader({ siteName, ctaText, ctaLink, navLinks }: SiteHeaderP
         </nav>
 
         {/* Desktop CTA */}
-        <Link
+        <ProtectedLink
           href={ctaLink}
           className="hidden gradient-cyan rounded-lg px-6 py-2.5 text-sm font-semibold text-text-inverse transition-all duration-300 hover:shadow-cyan-md hover:-translate-y-0.5 md:block"
         >
           {ctaText}
-        </Link>
+        </ProtectedLink>
 
         {/* Mobile Hamburger */}
         <button
@@ -207,13 +208,13 @@ export function SiteHeader({ siteName, ctaText, ctaLink, navLinks }: SiteHeaderP
                 transition={{ delay: 0.4 }}
                 className="mt-10 space-y-6"
               >
-                <Link
+                <ProtectedLink
                   href={ctaLink}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="gradient-cyan block w-full rounded-lg px-6 py-4 text-center text-base font-semibold text-text-inverse"
                 >
                   {ctaText}
-                </Link>
+                </ProtectedLink>
               </motion.div>
             </nav>
           </motion.div>
