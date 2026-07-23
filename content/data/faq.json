@@ -1,0 +1,51 @@
+{
+  "section": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about working with us.",
+    "label": "FAQ"
+  },
+  "questions": [
+    {
+      "id": "timeline",
+      "question": "How long does a typical project take?",
+      "answer": "Most web design projects take 4–10 weeks depending on complexity. During our initial consultation, we'll assess your requirements and provide a tailored timeline. If you have a tight deadline, we offer expedited timelines — just let us know during your booking call.",
+      "order": 1,
+      "category": "general"
+    },
+    {
+      "id": "pricing",
+      "question": "What is your pricing model?",
+      "answer": "We offer both fixed-price packages and custom quotes depending on project scope. Our pricing is transparent with no hidden fees. We start with a free consultation to understand your needs, then provide a detailed proposal. Projects typically range from PKR 150,000 for starter sites to custom enterprise solutions.",
+      "order": 2,
+      "category": "pricing"
+    },
+    {
+      "id": "support",
+      "question": "Do you offer ongoing support after launch?",
+      "answer": "Absolutely. We offer flexible maintenance packages that include security updates, performance monitoring, content updates, and priority support. We believe in long-term partnerships — your success is our success.",
+      "order": 3,
+      "category": "services"
+    },
+    {
+      "id": "redesign",
+      "question": "Can you redesign an existing website?",
+      "answer": "Yes, we specialize in redesigns. We'll audit your current site, identify pain points, and create a strategy that preserves what works while transforming the rest. Our process ensures minimal disruption to your existing traffic and SEO rankings.",
+      "order": 4,
+      "category": "services"
+    },
+    {
+      "id": "location",
+      "question": "Do you work with clients outside Lahore?",
+      "answer": "Yes! While we're proudly Lahore-based, we work with clients across Pakistan and internationally. Our entire process is designed for remote collaboration — from discovery calls to project handoff. We've delivered projects for clients in Karachi, Islamabad, Dubai, and the UK.",
+      "order": 5,
+      "category": "general"
+    },
+    {
+      "id": "start",
+      "question": "What information do you need from me to get started?",
+      "answer": "For the initial consultation, just bring your vision and any reference sites you admire. We'll guide you through everything else. Once we start, we'll need your brand assets, content, and access to any existing platforms you're using.",
+      "order": 6,
+      "category": "process"
+    }
+  ]
+}

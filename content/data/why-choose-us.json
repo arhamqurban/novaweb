@@ -1,0 +1,15 @@
+{
+  "section": {
+    "heading": "Why Nova Webs?",
+    "subtitle": "We don't just build websites. We build digital growth engines.",
+    "label": "Why Us"
+  },
+  "reasons": [
+    { "title": "Results-Driven", "description": "Every pixel is designed to convert. We don't do 'pretty' without 'profitable.'", "icon": "Target" },
+    { "title": "Premium Design", "description": "Award-worthy aesthetics that elevate your brand above competitors. We bring global design standards to Lahore.", "icon": "Sparkles" },
+    { "title": "Local Expertise", "description": "Lahore-based with global standards. We understand the local market while delivering world-class quality.", "icon": "MapPin" },
+    { "title": "Ongoing Support", "description": "We don't disappear after launch. Long-term partnership is our model. We succeed when you succeed.", "icon": "HeartHandshake" },
+    { "title": "Technical Excellence", "description": "Modern tech stack, clean code, and rigorous testing. Every project is built to perform, scale, and last.", "icon": "Zap" },
+    { "title": "Transparent Process", "description": "No black boxes. You'll know exactly what we're doing, when, and why. Communication is our priority.", "icon": "Eye" }
+  ]
+}

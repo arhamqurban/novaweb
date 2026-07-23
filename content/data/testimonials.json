@@ -1,0 +1,57 @@
+{
+  "section": {
+    "heading": "What Our Clients Say",
+    "subtitle": "Don't take our word for it.",
+    "label": "Testimonials"
+  },
+  "testimonials": [
+    {
+      "id": "ali-raza",
+      "name": "Ali Raza",
+      "role": "CEO",
+      "company": "TechVentures",
+      "quote": "Working with Nova completely transformed our online presence. Our bounce rate dropped by 35% and conversions increased by 40% in the first month.",
+      "avatar": "/images/testimonial-1.jpg",
+      "rating": 5,
+      "metrics": "+40% conversions",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "sara-khan",
+      "name": "Sara Khan",
+      "role": "Founder",
+      "company": "LuxeStay",
+      "quote": "They didn't just build a website — they built a complete booking ecosystem. Our online reservations increased by 65% within two months of launch.",
+      "avatar": "/images/testimonial-2.jpg",
+      "rating": 5,
+      "metrics": "+65% bookings",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "usman-malik",
+      "name": "Usman Malik",
+      "role": "Director",
+      "company": "CityRealty",
+      "quote": "Nova's understanding of our local real estate market was impressive. They delivered a platform that our agents actually love using.",
+      "avatar": "/images/testimonial-3.jpg",
+      "rating": 5,
+      "metrics": "3× lead gen",
+      "featured": false,
+      "order": 3
+    },
+    {
+      "id": "zara-ahmed",
+      "name": "Zara Ahmed",
+      "role": "Marketing Head",
+      "company": "GreenLeaf Organics",
+      "quote": "Our brand finally feels premium. Nova redesigned everything from our logo to our checkout flow. The results speak for themselves.",
+      "avatar": "/images/testimonial-4.jpg",
+      "rating": 5,
+      "metrics": "+55% traffic",
+      "featured": false,
+      "order": 4
+    }
+  ]
+}

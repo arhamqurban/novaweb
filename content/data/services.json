@@ -1,0 +1,63 @@
+{
+  "section": {
+    "heading": "What We Do Best",
+    "subtitle": "From concept to launch — every service designed for excellence.",
+    "label": "What We Do"
+  },
+  "services": [
+    {
+      "id": "web-design",
+      "title": "Web Design",
+      "description": "Pixel-perfect UI/UX design that captivates and converts.",
+      "icon": "Palette",
+      "features": ["Discovery & Research", "Wireframing & Prototyping", "UI Design", "UX Optimization", "Interactive Prototypes"],
+      "href": "/services#web-design",
+      "order": 1
+    },
+    {
+      "id": "development",
+      "title": "Web Development",
+      "description": "Rock-solid frontend and backend development with modern stacks.",
+      "icon": "Code",
+      "features": ["Frontend Development", "Backend Development", "API Integration", "CMS Development", "Performance Optimization"],
+      "href": "/services#development",
+      "order": 2
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-Commerce",
+      "description": "End-to-end online stores that drive revenue and delight customers.",
+      "icon": "ShoppingCart",
+      "features": ["Shopify Development", "WooCommerce", "Custom E-Commerce", "Payment Integration", "Migration Services"],
+      "href": "/services#ecommerce",
+      "order": 3
+    },
+    {
+      "id": "branding",
+      "title": "Branding",
+      "description": "Identity that sticks. From logos to full brand systems.",
+      "icon": "Sparkles",
+      "features": ["Logo Design", "Brand Identity", "Brand Guidelines", "Visual Systems", "Brand Strategy"],
+      "href": "/services#branding",
+      "order": 4
+    },
+    {
+      "id": "seo",
+      "title": "SEO",
+      "description": "Grow organic traffic and dominate search rankings.",
+      "icon": "TrendingUp",
+      "features": ["Technical SEO", "On-Page SEO", "Content Strategy", "Local SEO", "Performance Audits"],
+      "href": "/services#seo",
+      "order": 5
+    },
+    {
+      "id": "support",
+      "title": "Support & Maintenance",
+      "description": "Ongoing care to keep your website secure, fast, and updated.",
+      "icon": "Shield",
+      "features": ["24h Response Time", "Security Updates", "Performance Monitoring", "Content Updates", "Backup Management"],
+      "href": "/services#support",
+      "order": 6
+    }
+  ]
+}

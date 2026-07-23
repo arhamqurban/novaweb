@@ -1,0 +1,28 @@
+{
+  "section": {
+    "heading": "Technologies We Master",
+    "subtitle": "Modern tools. Modern results.",
+    "label": "Tech Stack"
+  },
+  "technologies": [
+    { "name": "Next.js", "category": "Frontend" },
+    { "name": "React", "category": "Frontend" },
+    { "name": "TypeScript", "category": "Language" },
+    { "name": "Tailwind CSS", "category": "Frontend" },
+    { "name": "Node.js", "category": "Backend" },
+    { "name": "PostgreSQL", "category": "Database" },
+    { "name": "MongoDB", "category": "Database" },
+    { "name": "Stripe", "category": "Payment" },
+    { "name": "GSAP", "category": "Animation" },
+    { "name": "Framer Motion", "category": "Animation" },
+    { "name": "WordPress", "category": "CMS" },
+    { "name": "Sanity CMS", "category": "CMS" },
+    { "name": "Supabase", "category": "Backend" },
+    { "name": "Redis", "category": "Database" },
+    { "name": "Docker", "category": "DevOps" },
+    { "name": "AWS", "category": "Cloud" },
+    { "name": "Shopify", "category": "E-Commerce" },
+    { "name": "Laravel", "category": "Backend" },
+    { "name": "Mapbox", "category": "Maps" }
+  ]
+}

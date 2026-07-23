@@ -1,0 +1,15 @@
+{
+  "section": {
+    "heading": "Industries We Transform",
+    "subtitle": "Expertise across sectors. Results in every one.",
+    "label": "Industries"
+  },
+  "industries": [
+    { "id": "restaurant", "title": "Restaurants & Cafes", "icon": "UtensilsCrossed", "count": "8+ projects", "description": "Digital menus, online ordering, and reservation systems that fill seats." },
+    { "id": "fitness", "title": "Fitness & Gyms", "icon": "Dumbbell", "count": "6+ projects", "description": "Member portals, class scheduling, and brand websites that convert visitors into members." },
+    { "id": "healthcare", "title": "Healthcare & Dental", "icon": "HeartPulse", "count": "7+ projects", "description": "Patient portals, booking systems, and trust-building websites for clinics." },
+    { "id": "real-estate", "title": "Real Estate", "icon": "Building2", "count": "5+ projects", "description": "Property listing platforms, virtual tours, and agent dashboards." },
+    { "id": "ecommerce", "title": "E-Commerce & Retail", "icon": "ShoppingBag", "count": "12+ projects", "description": "Custom stores, inventory management, and checkout experiences that sell." },
+    { "id": "saas", "title": "SaaS & Tech", "icon": "Monitor", "count": "4+ projects", "description": "Web applications, dashboards, and platforms built to scale." }
+  ]
+}

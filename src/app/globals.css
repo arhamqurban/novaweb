@@ -1,0 +1,421 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================================
+   Nova Webs — Global Design System
+   Based on approved Phase 2 UI/UX Specification
+   ============================================================ */
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+@theme inline {
+    /* Fonts */
+    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    --font-heading: "Satoshi", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+    /* Core Colors — Matte Black Foundation */
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #111111;
+    --color-bg-tertiary: #1a1a1a;
+    --color-bg-elevated: #181818;
+    --color-bg-hover: #222222;
+    --color-bg-glass: rgba(255, 255, 255, 0.03);
+    --color-bg-glass-strong: rgba(255, 255, 255, 0.06);
+
+    /* Surface Colors */
+    --color-surface-default: #111111;
+    --color-surface-elevated: #1a1a1a;
+    --color-surface-glass: rgba(255, 255, 255, 0.04);
+    --color-surface-accent: rgba(0, 229, 255, 0.04);
+
+    /* Border Colors */
+    --color-border-default: #2a2a2a;
+    --color-border-light: #333333;
+    --color-border-lighter: #3d3d3d;
+    --color-border-glass: rgba(255, 255, 255, 0.08);
+    --color-border-glass-hover: rgba(255, 255, 255, 0.12);
+    --color-border-focus: #00e5ff;
+
+    /* Text Colors */
+    --color-text-primary: #fafafa;
+    --color-text-secondary: #e0e0e0;
+    --color-text-tertiary: #a0a0a0;
+    --color-text-muted: #666666;
+    --color-text-disabled: #4d4d4d;
+    --color-text-inverse: #0a0a0a;
+    --color-text-link: #00e5ff;
+    --color-text-link-hover: #4df0ff;
+
+    /* Accent — Cyan */
+    --color-accent-primary: #00e5ff;
+    --color-accent-hover: #00b8d4;
+    --color-accent-active: #0099b3;
+    --color-accent-subtle: rgba(0, 229, 255, 0.1);
+    --color-accent-glow: rgba(0, 229, 255, 0.2);
+    --color-accent-glass: rgba(0, 229, 255, 0.08);
+
+    /* Silver / Metallic */
+    --color-silver: #c0c0c0;
+    --color-silver-light: #e8e8e8;
+    --color-silver-dark: #8a8a8a;
+
+    /* Semantic Colors */
+    --color-success: #00e676;
+    --color-success-bg: rgba(0, 230, 118, 0.1);
+    --color-error: #ff1744;
+    --color-error-bg: rgba(255, 23, 68, 0.1);
+    --color-warning: #ffd600;
+    --color-warning-bg: rgba(255, 214, 0, 0.1);
+
+    /* shadcn/ui compatibility tokens */
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: #111111;
+    --card-foreground: #fafafa;
+    --popover: #111111;
+    --popover-foreground: #fafafa;
+    --primary: #00e5ff;
+    --primary-foreground: #0a0a0a;
+    --secondary: #1a1a1a;
+    --secondary-foreground: #fafafa;
+    --muted: #1a1a1a;
+    --muted-foreground: #a0a0a0;
+    --accent: #00e5ff;
+    --accent-foreground: #0a0a0a;
+    --destructive: #ff1744;
+    --border: #2a2a2a;
+    --input: #333333;
+    --ring: #00e5ff;
+
+    /* Border Radius */
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-3xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
+    --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.5);
+    --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.55);
+    --shadow-cyan-sm: 0 2px 8px rgba(0, 229, 255, 0.15);
+    --shadow-cyan-md: 0 4px 16px rgba(0, 229, 255, 0.2);
+    --shadow-cyan-lg: 0 8px 32px rgba(0, 229, 255, 0.25);
+
+    /* Spacing Tokens (8px base) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 48px;
+    --space-7: 56px;
+    --space-8: 64px;
+    --space-9: 80px;
+    --space-10: 96px;
+    --space-11: 120px;
+    --space-12: 160px;
+    --space-13: 200px;
+}
+
+/* ─── Glassmorphism Utilities ────────────────────────────── */
+@utility glass {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border-glass);
+
+    @supports not (backdrop-filter: blur(1px)) {
+        background: rgba(26, 26, 26, 0.85);
+    }
+}
+
+@utility glass-strong {
+    background: var(--color-bg-glass-strong);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--color-border-glass);
+
+    @supports not (backdrop-filter: blur(1px)) {
+        background: rgba(26, 26, 26, 0.9);
+    }
+}
+
+@utility glass-cyan {
+    background: var(--color-surface-accent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+/* ─── Gradient Utilities ─────────────────────────────────── */
+@utility gradient-cyan {
+    background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%);
+}
+
+@utility gradient-silver {
+    background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 50%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@utility gradient-ambient {
+    background: radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        rgba(0, 229, 255, 0.05) 0%,
+        transparent 100%
+    );
+}
+
+/* ─── Text Utilities ─────────────────────────────────────── */
+@utility text-balance {
+    text-wrap: balance;
+}
+
+/* ─── Typography Classes ─────────────────────────────────── */
+@utility display-xl {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+@utility display-lg {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+@utility heading-1 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3vw, 3rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+@utility heading-2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2vw, 2.25rem);
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+@utility heading-3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 1.5vw, 1.75rem);
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+@utility heading-4 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.125rem, 1.25vw, 1.375rem);
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+@utility body-lg {
+    font-size: clamp(1.125rem, 1.15vw, 1.25rem);
+    line-height: 1.6;
+}
+
+@utility body {
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+@utility body-sm {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+@utility caption {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+@utility overline {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@utility mono-lg {
+    font-family: var(--font-mono);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+/* ─── Section Spacing ────────────────────────────────────── */
+@utility section-padding {
+    padding-top: clamp(3rem, 8vw, 7.5rem);
+    padding-bottom: clamp(3rem, 8vw, 7.5rem);
+}
+
+@utility container-nova {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 3vw, 5rem);
+    padding-right: clamp(1rem, 3vw, 5rem);
+    max-width: 1280px;
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@utility animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes pulse-whatsapp {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+}
+
+@utility animate-pulse-whatsapp {
+    animation: pulse-whatsapp 2s ease-in-out 3;
+}
+
+@keyframes pulse-slow {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@utility animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@utility animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+@utility animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ─── Scrollbar Styling ──────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border-default);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-light);
+}
+
+/* ─── Base Layer ─────────────────────────────────────────── */
+@layer base {
+    * {
+        @apply border-border-default;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-family: var(--font-sans);
+    }
+
+    body {
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+        background: rgba(0, 229, 255, 0.3);
+        color: #fafafa;
+    }
+
+    /* Focus styles for keyboard navigation */
+    :focus-visible {
+        outline: 2px solid var(--color-border-focus);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}

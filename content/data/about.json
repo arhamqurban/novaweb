@@ -1,0 +1,18 @@
+{
+  "section": {
+    "heading": "Who We Are",
+    "subtitle": "A team of digital craftsmen based in Lahore, serving the world.",
+    "label": "About Us"
+  },
+  "story": {
+    "heading": "Digital Excellence, Crafted in Lahore",
+    "paragraphs": [
+      "Nova Webs was founded with a simple belief: Lahore deserves world-class digital experiences. Too long have local businesses had to choose between expensive international agencies and subpar local alternatives.",
+      "We bridge that gap. Our team combines global design standards with deep understanding of the Pakistani market. Every project is crafted with the same quality you'd expect from a top New York or London agency — but with local knowledge, cultural sensitivity, and genuine partnership.",
+      "We've grown from a two-person studio to a full-service digital agency, delivering 50+ projects for clients across Pakistan, the UAE, and the UK."
+    ],
+    "image": "/images/about-studio.jpg",
+    "founded": "2021",
+    "location": "Lahore, Pakistan"
+  }
+}

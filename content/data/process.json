@@ -1,0 +1,37 @@
+{
+  "section": {
+    "heading": "How We Work",
+    "subtitle": "A proven process that delivers results, on time and on budget.",
+    "label": "Process"
+  },
+  "steps": [
+    {
+      "id": 1,
+      "title": "Discovery",
+      "duration": "2 weeks",
+      "description": "We learn everything about your business, audience, and goals. You get a comprehensive strategy document.",
+      "items": ["Market research", "Competitor analysis", "User persona definition", "Technical requirements", "Project roadmap"]
+    },
+    {
+      "id": 2,
+      "title": "Design",
+      "duration": "3 weeks",
+      "description": "We craft pixel-perfect designs that balance aesthetics with conversion psychology.",
+      "items": ["Wireframing", "Visual design", "Interactive prototypes", "Client feedback loops", "Design system creation"]
+    },
+    {
+      "id": 3,
+      "title": "Develop",
+      "duration": "4 weeks",
+      "description": "We build using modern, performant technologies. Clean code, rigorous testing.",
+      "items": ["Frontend development", "Backend integration", "CMS setup", "Performance optimization", "Cross-browser testing"]
+    },
+    {
+      "id": 4,
+      "title": "Launch",
+      "duration": "1 week",
+      "description": "We deploy, monitor, and optimize. Your site goes live with a solid foundation.",
+      "items": ["Deployment & go-live", "SEO configuration", "Analytics setup", "Team training", "Post-launch support"]
+    }
+  ]
+}

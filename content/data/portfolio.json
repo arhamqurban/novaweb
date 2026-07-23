@@ -1,0 +1,99 @@
+{
+  "section": {
+    "heading": "Our Recent Work",
+    "subtitle": "Real projects, real results. Explore our latest digital creations that drive growth for businesses across every industry.",
+    "label": "Our Work"
+  },
+  "projects": [
+    {
+      "id": "techventures",
+      "title": "TechVentures",
+      "category": "Web Design & Development",
+      "description": "Complete digital transformation for a SaaS startup with custom dashboard and analytics.",
+      "image": "/images/portfolio-1.jpg",
+      "metrics": "+40% conversion rate",
+      "href": "/portfolio/techventures",
+      "aspectRatio": "square",
+      "featured": true,
+      "technologies": ["React", "Next.js", "Node.js"],
+      "industry": "SaaS",
+      "liveUrl": "https://techventures.com",
+      "order": 1
+    },
+    {
+      "id": "luxestay",
+      "title": "LuxeStay",
+      "category": "E-Commerce",
+      "description": "Premium hotel booking experience with custom CMS and real-time availability.",
+      "image": "/images/portfolio-2.jpg",
+      "metrics": "+65% online bookings",
+      "href": "/portfolio/luxestay",
+      "aspectRatio": "square",
+      "featured": true,
+      "technologies": ["Next.js", "Stripe", "Sanity CMS"],
+      "industry": "Hospitality",
+      "liveUrl": "https://luxestay.com",
+      "order": 2
+    },
+    {
+      "id": "greenleaf",
+      "title": "GreenLeaf Organics",
+      "category": "Branding & Web Design",
+      "description": "Complete brand identity and e-commerce platform for organic products.",
+      "image": "/images/portfolio-3.jpg",
+      "metrics": "+55% organic traffic",
+      "href": "/portfolio/greenleaf",
+      "aspectRatio": "square",
+      "featured": true,
+      "technologies": ["Shopify", "Tailwind CSS", "Laravel"],
+      "industry": "E-Commerce",
+      "liveUrl": "https://greenleaforganics.com",
+      "order": 3
+    },
+    {
+      "id": "cityrealty",
+      "title": "CityRealty",
+      "category": "Web Development",
+      "description": "Property listing platform with advanced search, 3D tours, and agent dashboards.",
+      "image": "/images/portfolio-4.jpg",
+      "metrics": "3× lead generation",
+      "href": "/portfolio/cityrealty",
+      "aspectRatio": "square",
+      "featured": false,
+      "technologies": ["Next.js", "PostgreSQL", "AWS"],
+      "industry": "Real Estate",
+      "liveUrl": "https://cityrealty.pk",
+      "order": 4
+    },
+    {
+      "id": "iron-gym",
+      "title": "IronForge Gym",
+      "category": "Gym & Fitness",
+      "description": "High-performance gym website with class booking, memberships, and trainer profiles.",
+      "image": "/images/portfolio-5.jpg",
+      "metrics": "+85% membership signups",
+      "href": "/portfolio/iron-gym",
+      "aspectRatio": "square",
+      "featured": true,
+      "technologies": ["Next.js", "Stripe", "Supabase", "Framer Motion"],
+      "industry": "Fitness",
+      "liveUrl": "https://ironforgegym.com",
+      "order": 5
+    },
+    {
+      "id": "sneakerhub",
+      "title": "SneakerHub",
+      "category": "E-Commerce",
+      "description": "Sneaker marketplace with dynamic catalog, AI size matching, and secure checkout.",
+      "image": "/images/portfolio-6.jpg",
+      "metrics": "+150% revenue",
+      "href": "/portfolio/sneakerhub",
+      "aspectRatio": "square",
+      "featured": false,
+      "technologies": ["Next.js", "Stripe", "Sanity CMS", "Redis"],
+      "industry": "E-Commerce",
+      "liveUrl": "https://sneakerhub.com",
+      "order": 6
+    }
+  ]
+}

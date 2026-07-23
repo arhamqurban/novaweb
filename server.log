@@ -1,0 +1,102 @@
+
+> nova-webs@0.1.0 dev
+> next dev -p 3001
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.1.5:3001
+- Environments: .env.local, .env
+✓ Ready in 619ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+ GET /manifest.webmanifest 200 in 89ms (next.js: 74ms, application-code: 15ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 6ms, application-code: 7ms)
+ GET /booking 200 in 1414ms (next.js: 598ms, application-code: 816ms)
+ GET /admin/bookings 200 in 1344ms (next.js: 942ms, proxy.ts: 145ms, application-code: 258ms)
+ GET /api/admin/submissions?type=booking&limit=100 200 in 73ms (next.js: 38ms, proxy.ts: 26ms, application-code: 9ms)
+ GET /api/admin/submissions?type=booking&limit=100 200 in 18ms (next.js: 7ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /images/icon-192.png 404 in 293ms (next.js: 38ms, application-code: 254ms)
+ GET /images/icon-192.png 404 in 104ms (next.js: 22ms, application-code: 82ms)
+ GET /booking 200 in 127ms (next.js: 13ms, application-code: 114ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 6ms, application-code: 12ms)
+ GET /images/icon-192.png 404 in 87ms (next.js: 10ms, application-code: 77ms)
+✅ Form saved: contact-2026-07-23T11-54-29-394Z-tb48nc.json
+✅ Email sent via EmailJS
+ POST /api/submit 200 in 1626ms (next.js: 40ms, application-code: 1585ms)
+✅ Form saved: booking-2026-07-23T11-54-56-992Z-if05e3.json
+✅ Email sent via EmailJS
+ POST /api/submit 200 in 1219ms (next.js: 5ms, application-code: 1213ms)
+ GET / 200 in 79ms (next.js: 37ms, application-code: 42ms)
+ GET /manifest.webmanifest 200 in 11ms (next.js: 4ms, application-code: 7ms)
+ GET /images/icon-192.png 404 in 83ms (next.js: 8ms, application-code: 75ms)
+ GET /images/portfolio-1.jpg 404 in 250ms (next.js: 21ms, application-code: 229ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-1.jpg received null
+ GET /images/portfolio-2.jpg 404 in 316ms (next.js: 102ms, application-code: 214ms)
+ GET /images/portfolio-3.jpg 404 in 319ms (next.js: 136ms, application-code: 183ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-2.jpg received null
+⨯ The requested resource isn't a valid image for /images/portfolio-3.jpg received null
+ GET /images/portfolio-4.jpg 404 in 229ms (next.js: 18ms, application-code: 211ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-4.jpg received null
+ GET /images/portfolio-5.jpg 404 in 233ms (next.js: 85ms, application-code: 148ms)
+ GET /images/portfolio-6.jpg 404 in 235ms (next.js: 117ms, application-code: 118ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-5.jpg received null
+⨯ The requested resource isn't a valid image for /images/portfolio-6.jpg received null
+ GET /booking 200 in 33ms (next.js: 6ms, application-code: 28ms)
+ GET /manifest.webmanifest 200 in 10ms (next.js: 4ms, application-code: 6ms)
+ GET /images/icon-192.png 404 in 77ms (next.js: 7ms, application-code: 69ms)
+✅ Form saved: booking-2026-07-23T11-57-40-413Z-rwnf8p.json
+⚠️ EmailJS error (non-fatal): [TypeError: fetch failed] {
+  [cause]: Error [ConnectTimeoutError]: Connect Timeout Error (attempted address: api.emailjs.com:443, timeout: 10000ms)
+      at ignore-listed frames {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+ POST /api/submit 200 in 10.7s (next.js: 4ms, application-code: 10.7s)
+ GET /booking 200 in 99ms (next.js: 6ms, application-code: 93ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET /images/icon-192.png 404 in 94ms (next.js: 11ms, application-code: 83ms)
+ GET / 200 in 42ms (next.js: 5ms, application-code: 37ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 4ms, application-code: 10ms)
+ GET /images/icon-192.png 404 in 106ms (next.js: 13ms, application-code: 94ms)
+ GET /images/portfolio-1.jpg 404 in 279ms (next.js: 20ms, application-code: 259ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-1.jpg received null
+ GET /images/portfolio-2.jpg 404 in 286ms (next.js: 93ms, application-code: 193ms)
+ GET /images/portfolio-3.jpg 404 in 290ms (next.js: 135ms, application-code: 155ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-2.jpg received null
+⨯ The requested resource isn't a valid image for /images/portfolio-3.jpg received null
+ GET /images/portfolio-4.jpg 404 in 263ms (next.js: 20ms, application-code: 242ms)
+ GET /images/portfolio-5.jpg 404 in 267ms (next.js: 62ms, application-code: 205ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-4.jpg received null
+ GET /images/portfolio-6.jpg 404 in 271ms (next.js: 173ms, application-code: 99ms)
+⨯ The requested resource isn't a valid image for /images/portfolio-5.jpg received null
+⨯ The requested resource isn't a valid image for /images/portfolio-6.jpg received null
+✅ Form saved: contact-2026-07-23T11-59-09-530Z-fdhzyr.json
+⚠️ EmailJS error (non-fatal): [TypeError: fetch failed] {
+  [cause]: Error [ConnectTimeoutError]: Connect Timeout Error (attempted address: api.emailjs.com:443, timeout: 10000ms)
+      at ignore-listed frames {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+ POST /api/submit 200 in 10.7s (next.js: 4ms, application-code: 10.7s)
+ GET /contact 200 in 92ms (next.js: 44ms, application-code: 48ms)
+ GET /manifest.webmanifest 200 in 15ms (next.js: 6ms, application-code: 9ms)
+ GET /images/icon-192.png 404 in 89ms (next.js: 9ms, application-code: 80ms)
+✅ Form saved: contact-2026-07-23T11-59-48-252Z-k6bosy.json
+⚠️ EmailJS error (non-fatal): [TypeError: fetch failed] {
+  [cause]: Error [ConnectTimeoutError]: Connect Timeout Error (attempted address: api.emailjs.com:443, timeout: 10000ms)
+      at ignore-listed frames {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+ POST /api/submit 200 in 10.7s (next.js: 7ms, application-code: 10.7s)
+ GET /admin 200 in 78ms (next.js: 39ms, proxy.ts: 9ms, application-code: 30ms)
+ GET /api/admin/submissions?limit=5 200 in 20ms (next.js: 6ms, proxy.ts: 4ms, application-code: 9ms)
+ GET /manifest.webmanifest 200 in 24ms (next.js: 17ms, application-code: 7ms)
+ GET /api/admin/submissions?limit=5 200 in 19ms (next.js: 6ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /images/icon-192.png 404 in 88ms (next.js: 8ms, application-code: 80ms)
+ GET /admin/bookings 200 in 82ms (next.js: 10ms, proxy.ts: 12ms, application-code: 60ms)
+ GET /api/admin/submissions?type=booking&limit=100 200 in 41ms (next.js: 7ms, proxy.ts: 26ms, application-code: 8ms)
+ GET /manifest.webmanifest 200 in 24ms (next.js: 17ms, application-code: 8ms)
+ GET /api/admin/submissions?type=booking&limit=100 200 in 17ms (next.js: 4ms, proxy.ts: 3ms, application-code: 10ms)
+ GET /images/icon-192.png 404 in 122ms (next.js: 16ms, application-code: 106ms)
+ GET /admin/newsletter 200 in 987ms (next.js: 948ms, proxy.ts: 4ms, application-code: 36ms)

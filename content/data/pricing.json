@@ -1,0 +1,36 @@
+{
+  "section": {
+    "heading": "Simple, Affordable Pricing",
+    "subtitle": "Premium websites at prices that work for you. Starting from just PKR 8,000.",
+    "label": "Pricing"
+  },
+  "tiers": [
+    {
+      "id": "starter",
+      "name": "Basic",
+      "price": "PKR 8,000",
+      "description": "Perfect for small businesses and startups needing a professional website fast.",
+      "features": ["1-Page Website", "Responsive Design", "Basic SEO", "Contact Form", "Social Media Links", "3 Days Delivery"],
+      "isFeatured": false,
+      "cta": "Get Started"
+    },
+    {
+      "id": "business",
+      "name": "Standard",
+      "price": "PKR 15,000",
+      "description": "Ideal for growing businesses that need a complete digital presence.",
+      "features": ["5-Page Website", "Custom Design", "Advanced SEO", "CMS Integration", "Blog Setup", "1 Week Delivery"],
+      "isFeatured": true,
+      "cta": "Most Popular"
+    },
+    {
+      "id": "enterprise",
+      "name": "Premium",
+      "price": "PKR 30,000",
+      "description": "For established businesses with complex requirements.",
+      "features": ["10-Page Website", "Custom UI/UX", "E-Commerce Ready", "Priority Support", "Dedicated Manager", "2 Weeks Delivery"],
+      "isFeatured": false,
+      "cta": "Contact Us"
+    }
+  ]
+}

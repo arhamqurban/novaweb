@@ -1,0 +1,42 @@
+{
+  "section": {
+    "heading": "Meet the Team",
+    "subtitle": "Real people behind the brand.",
+    "label": "Team"
+  },
+  "members": [
+    {
+      "id": "founder-1",
+      "name": "Ahmed Hassan",
+      "role": "Founder & Creative Director",
+      "bio": "Visionary designer with 10+ years of experience crafting digital experiences for global brands. Passionate about putting Lahore on the global design map.",
+      "image": "/images/team-1.jpg",
+      "linkedIn": "https://linkedin.com/in/ahmedhassan",
+      "order": 1
+    },
+    {
+      "id": "dev-1",
+      "name": "Fatima Ali",
+      "role": "Lead Developer",
+      "bio": "Full-stack engineer specializing in React, Next.js, and Node.js. Turns complex requirements into clean, performant code.",
+      "image": "/images/team-2.jpg",
+      "linkedIn": "https://linkedin.com/in/fatimaali",
+      "order": 2
+    },
+    {
+      "id": "designer-1",
+      "name": "Zayan Malik",
+      "role": "UI/UX Designer",
+      "bio": "Award-winning designer focused on creating intuitive, beautiful interfaces that users love. Every pixel placed with intention.",
+      "image": "/images/team-3.jpg",
+      "linkedIn": "https://linkedin.com/in/zayanmalik",
+      "order": 3
+    }
+  ],
+  "values": [
+    { "title": "Transparency", "description": "No black boxes. You'll know exactly what we're doing, when, and why.", "icon": "Eye" },
+    { "title": "Craft", "description": "Every detail matters. We don't cut corners because your brand deserves better.", "icon": "PenTool" },
+    { "title": "Innovation", "description": "We stay ahead of the curve so your website doesn't feel dated in six months.", "icon": "Lightbulb" },
+    { "title": "Partnership", "description": "We succeed when you succeed. Long-term relationships over quick projects.", "icon": "HeartHandshake" }
+  ]
+}

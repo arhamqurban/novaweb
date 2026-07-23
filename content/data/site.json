@@ -1,0 +1,97 @@
+{
+  "site": {
+    "name": "Nova Webs",
+    "tagline": "Digital Excellence, Crafted.",
+    "description": "Lahore's premium web design agency. We craft websites that don't just look extraordinary — they convert.",
+    "shortDescription": "Lahore's premium digital craft studio",
+    "url": "https://novawebs.com",
+    "ogImage": "/images/og.jpg",
+    "foundingYear": "2021",
+    "location": "Lahore, Pakistan",
+    "keywords": ["web design", "web development", "Lahore", "Pakistan", "premium web agency", "UI/UX design", "e-commerce", "branding"],
+    "themeColor": "#0A0A0A",
+    "accentColor": "#00E5FF"
+  },
+  "navigation": {
+    "ctaText": "Book a Call",
+    "ctaLink": "/booking",
+    "links": [
+      {
+        "label": "Services",
+        "href": "/services",
+        "children": [
+          { "label": "Web Design", "href": "/services#web-design" },
+          { "label": "Web Development", "href": "/services#development" },
+          { "label": "E-Commerce", "href": "/services#ecommerce" },
+          { "label": "Branding", "href": "/services#branding" },
+          { "label": "SEO", "href": "/services#seo" }
+        ]
+      },
+      { "label": "Portfolio", "href": "/portfolio" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ]
+  },
+  "announcementBar": {
+    "enabled": true,
+    "messages": [
+      { "text": "Limited slots available for Q2 2026", "cta": "Book Now →", "href": "/booking" },
+      { "text": "New: E-Commerce Starter Package", "cta": "Learn More →", "href": "/services#ecommerce" },
+      { "text": "Trusted by 50+ businesses across Pakistan", "cta": "See Our Work →", "href": "/portfolio" }
+    ]
+  },
+  "hero": {
+    "label": "Premium Web Design Agency",
+    "headline": "We Build Digital Experiences That Drive Results",
+    "headlineHighlight": "Drive Results",
+    "subheadline": "Lahore's premium web design agency. We craft websites that don't just look extraordinary — they convert.",
+    "primaryCta": { "text": "Book a Call", "href": "/booking" },
+    "secondaryCta": { "text": "View Our Work", "href": "/portfolio" },
+    "socialProof": "Trusted by 50+ businesses across Pakistan"
+  },
+  "trustBar": {
+    "heading": "Trusted by industry leaders across Lahore",
+    "logos": [
+      { "name": "TechVentures", "src": "/images/client-1.svg" },
+      { "name": "LuxeStay", "src": "/images/client-2.svg" },
+      { "name": "GreenLeaf", "src": "/images/client-3.svg" },
+      { "name": "CityRealty", "src": "/images/client-4.svg" },
+      { "name": "Pinnacle", "src": "/images/client-5.svg" },
+      { "name": "BrightPath", "src": "/images/client-6.svg" }
+    ]
+  },
+  "stats": [
+    { "value": "50", "label": "Projects Delivered", "suffix": "+" },
+    { "value": "5", "label": "Years of Experience", "suffix": "+" },
+    { "value": "98", "label": "Client Satisfaction", "suffix": "%" },
+    { "value": "100", "label": "Cups of Coffee", "suffix": "+" }
+  ],
+  "socialLinks": [
+      { "platform": "Instagram", "url": "https://www.instagram.com/novawebs9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", "icon": "Instagram", "label": "Follow us on Instagram" },
+      { "platform": "Facebook", "url": "https://facebook.com/NovaWebs", "icon": "Facebook", "label": "Follow us on Facebook" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com/company/novawebs", "icon": "Linkedin", "label": "Connect on LinkedIn" },
+      { "platform": "TikTok", "url": "https://tiktok.com/@novawebs", "icon": "Music2", "label": "Follow on TikTok" },
+      { "platform": "YouTube", "url": "https://youtube.com/@novawebs", "icon": "Youtube", "label": "Watch on YouTube" }
+    ],
+  "trustBadges": [
+    { "label": "Secure SSL Encryption", "icon": "Shield" },
+    { "label": "Fast Loading Guarantee", "icon": "Zap" },
+    { "label": "Mobile Optimized", "icon": "Smartphone" },
+    { "label": "24/7 Support", "icon": "Headphones" },
+    { "label": "Money Back Guarantee", "icon": "BadgeCheck" },
+    { "label": "100% Custom Design", "icon": "Palette" }
+  ],
+  "contact": {
+    "phone": "+92 302 6684097",
+    "email": "novawebs09@gmail.com",
+    "address": "Lahore, Pakistan",
+    "whatsapp": "https://wa.me/923026684097",
+    "whatsappMessage": "Hi Nova Webs! I'm interested in discussing a web design project.",
+    "mapsUrl": "https://maps.google.com/?q=Gulberg+Lahore",
+    "hours": {
+      "weekdays": "Mon – Fri: 9:00 AM – 6:00 PM",
+      "saturday": "Sat: 10:00 AM – 4:00 PM",
+      "sunday": "Sun: Closed"
+    }
+  }
+}

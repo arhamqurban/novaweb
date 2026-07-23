@@ -1,0 +1,273 @@
+// ============================================================
+// Nova Webs — Prisma Schema
+// Enterprise Content Management Database
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Admin Users ──────────────────────────────────────────
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  role          String    @default("admin") // admin | editor | manager
+  image         String?
+  isActive      Boolean   @default(true)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions      Session[]
+  auditLogs     AuditLog[]
+  activityLogs  AdminActivity[]
+}
+
+// ─── Sessions ─────────────────────────────────────────────
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  ipAddress String?
+  userAgent String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ─── Site Settings ────────────────────────────────────────
+model SiteSetting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+  type  String @default("string") // string | json | image | text
+}
+
+// ─── Hero Section ─────────────────────────────────────────
+model HeroSection {
+  id                 String @id @default(cuid())
+  label              String @default("Premium Web Design Agency")
+  headline           String @default("We Build Digital Experiences That Drive Results")
+  headlineHighlight  String @default("Drive Results")
+  subheadline        String @default("Lahore's premium web design agency.")
+  primaryCtaText     String @default("Book a Call")
+  primaryCtaHref     String @default("/booking")
+  secondaryCtaText   String @default("View Our Work")
+  secondaryCtaHref   String @default("/portfolio")
+  socialProof        String @default("Trusted by 50+ businesses across Pakistan")
+  updatedAt          DateTime @updatedAt
+}
+
+// ─── Services ─────────────────────────────────────────────
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  icon        String   @default("Palette")
+  features    String  @default("[]") // JSON array
+  href        String
+  order       Int      @default(1)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ─── Portfolio Projects ───────────────────────────────────
+model PortfolioProject {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  category     String
+  description  String
+  image        String   @default("/images/placeholder.jpg")
+  metrics      String?
+  technologies String  @default("[]") // JSON array
+  industry     String?
+  liveUrl      String?
+  featured     Boolean  @default(false)
+  status       String   @default("published") // draft | published | archived
+  order        Int      @default(1)
+  gallery      String  @default("[]") // JSON array
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ─── Testimonials ─────────────────────────────────────────
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String?
+  company   String?
+  quote     String
+  avatar    String   @default("/images/placeholder.jpg")
+  rating    Int      @default(5)
+  metrics   String?
+  project   String?
+  featured  Boolean  @default(false)
+  isVisible Boolean  @default(true)
+  order     Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── FAQ ──────────────────────────────────────────────────
+model FAQ {
+  id       String @id @default(cuid())
+  question String
+  answer   String
+  category String @default("general") // general | pricing | services | process
+  order    Int    @default(1)
+  isActive Boolean @default(true)
+}
+
+// ─── Process Steps ────────────────────────────────────────
+model ProcessStep {
+  id          String   @id @default(cuid())
+  stepNumber  Int
+  title       String
+  duration    String
+  description String
+  items       String  @default("[]") // JSON array
+  isActive    Boolean  @default(true)
+  order       Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ─── Team Members ─────────────────────────────────────────
+model TeamMember {
+  id        String   @id @default(cuid())
+  name      String
+  role      String
+  bio       String?
+  image     String   @default("/images/placeholder.jpg")
+  linkedIn  String?
+  order     Int      @default(1)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Why Choose Us ────────────────────────────────────────
+model WhyChooseUs {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  icon        String @default("Star")
+  order       Int    @default(1)
+  isActive    Boolean @default(true)
+}
+
+// ─── Industries ───────────────────────────────────────────
+model Industry {
+  id          String @id @default(cuid())
+  title       String
+  icon        String @default("Building2")
+  count       String @default("0 projects")
+  description String
+  order       Int    @default(1)
+  isActive    Boolean @default(true)
+}
+
+// ─── Technologies ─────────────────────────────────────────
+model Technology {
+  id       String @id @default(cuid())
+  name     String @unique
+  category String @default("Frontend")
+  isActive Boolean @default(true)
+}
+
+// ─── Pricing Tiers ────────────────────────────────────────
+model PricingTier {
+  id          String   @id @default(cuid())
+  name        String
+  price       String
+  description String
+  features    String  @default("[]") // JSON array
+  isFeatured  Boolean  @default(false)
+  cta         String   @default("Get Started")
+  isActive    Boolean  @default(true)
+  order       Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ─── Contact Messages ─────────────────────────────────────
+model ContactMessage {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  phone      String?
+  service    String?
+  budget     String?
+  message    String
+  type       String   @default("contact") // contact | quote | consultation
+  isRead     Boolean  @default(false)
+  isSpam     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+// ─── Newsletter Subscribers ───────────────────────────────
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+// ─── Blog Posts ───────────────────────────────────────────
+model BlogPost {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  description   String
+  content       String
+  category      String   @default("General")
+  tags          String  @default("[]") // JSON array
+  image         String   @default("/images/placeholder.jpg")
+  author        String   @default("Nova Webs")
+  authorRole    String   @default("Team")
+  readingTime   String   @default("3 min read")
+  featured      Boolean  @default(false)
+  status        String   @default("draft") // draft | published | archived
+  seoTitle      String?
+  seoDescription String?
+  seoKeywords   String?
+  publishedAt   DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// ─── Audit Logs ───────────────────────────────────────────
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String
+  action     String   // create | update | delete | login | logout
+  entity     String   // e.g. "Service", "PortfolioProject"
+  entityId   String?
+  details    String?  // JSON string with changes
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ─── Admin Activity ───────────────────────────────────────
+model AdminActivity {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String   // login | content_update | settings_change | etc
+  summary   String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
