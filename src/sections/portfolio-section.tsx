@@ -84,24 +84,18 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
             </span>
           </div>
 
-          {/* Hover actions */}
-          <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+          {/* Hover: Live Preview only */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-primary hover:text-text-inverse hover:border-accent-primary hover:shadow-cyan-md translate-y-4 group-hover:translate-y-0"
+                className="flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-primary hover:text-text-inverse hover:border-accent-primary hover:shadow-cyan-md translate-y-4 group-hover:translate-y-0"
               >
-                <ExternalLink size={14} /> Live Preview
+                <ExternalLink size={15} /> Live Preview
               </a>
             )}
-            <Link
-              href={project.caseUrl}
-              className="flex items-center gap-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-text-inverse hover:border-white translate-y-4 group-hover:translate-y-0"
-            >
-              <ArrowUpRight size={14} /> Case Study
-            </Link>
           </div>
         </div>
 
