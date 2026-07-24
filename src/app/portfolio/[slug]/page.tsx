@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Globe, Calendar, BarChart3 } from "lucide-react";
-import { getSiteConfig, getPortfolio, getPortfolioProject } from "@/lib/content";
+import { getPublishedProjects } from "@/lib/data-store";
+import { getSiteConfig, getPortfolio } from "@/lib/content";
 import { generatePageMetadata } from "@/lib/seo";
 import { FinalCTASection } from "@/sections/final-cta-section";
 
@@ -10,40 +11,28 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const portfolio = getPortfolio();
-  return portfolio.projects.map((project) => ({
-    slug: project.id,
-  }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const project = getPortfolioProject(slug);
+  const projects = getPublishedProjects();
+  const project = projects.find((p) => p.id === slug);
   if (!project) return {};
 
   return generatePageMetadata({
     title: project.title,
     description: project.description,
     path: `/portfolio/${slug}`,
-    keywords: [
-      project.title,
-      project.category,
-      project.industry,
-      "web design portfolio",
-      "Nova Webs project",
-    ],
-    ogImage: project.image,
+    keywords: [project.title, project.category, "web design portfolio", "Nova Webs project"],
+    ogImage: project.thumbnail,
   });
 }
 
 export default async function PortfolioProjectPage({ params }: Props) {
   const { slug } = await params;
-  const project = getPortfolioProject(slug);
+  const projects = getPublishedProjects();
+  const project = projects.find((p) => p.id === slug);
   if (!project) notFound();
 
-  const portfolio = getPortfolio();
-  const otherProjects = portfolio.projects
+  const otherProjects = projects
     .filter((p) => p.id !== slug)
     .slice(0, 3);
 
@@ -96,7 +85,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar size={16} className="text-accent-primary" />
-                  <span className="text-sm text-text-secondary">{project.industry}</span>
+                  <span className="text-sm text-text-secondary">{project.category}</span>
                 </div>
               </div>
             </div>
